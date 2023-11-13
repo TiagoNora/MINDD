@@ -13,6 +13,7 @@ print(df.head())
 # Exibindo os nomes das colunas
 print("\nNomes das colunas:")
 print(df.columns)
+print(df.dtypes)
 
 # Verificando o tamanho do conjunto de dados (número de linhas e colunas)
 print("\nTamanho do conjunto de dados (número de linhas e colunas):")
@@ -49,3 +50,7 @@ print("\nValores NA por coluna:")
 print(na_values)
 
 #Nao ha NA
+
+fig = plt.figure(figsize = (11,6))
+plt.title("Distribution of Target Variable")
+df["Loan Status"].value_counts().plot(kind = "pie", autopct = "%1.1f%%", cmap = 'Pastel2')
